@@ -1,0 +1,3 @@
+web:
+  image: ghcr.io/divideprojects/aliveimage:latest
+  restart: always
