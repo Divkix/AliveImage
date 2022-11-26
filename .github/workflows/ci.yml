@@ -57,9 +57,7 @@ jobs:
           cache-to: type=gha,mode=max
           tags: |
             ghcr.io/${{ env.IMAGE }}:latest
-            ghcr.io/${{ env.IMAGE }}:${{ env.BUILD_VER }}
             ${{ env.IMAGE }}:latest
-            ${{ env.IMAGE }}:${{ env.BUILD_VER }}
           labels: |
             org.opencontainers.image.authors=${{ github.repository_owner }}
             org.opencontainers.image.created=${{ env.BUILD_DATE }}
