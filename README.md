@@ -4,10 +4,13 @@ A simple docker image based on go and docker that serves a json response with th
 
 Made using go and docker.
 
+## Environment Variables
+ - PORT: The port to serve the response. Default: 80
+
 ## Usage
 
 ```bash
-docker run -d -p 80:80 --name aliveImage divideprojects/aliveimage
+docker run -d -p 80:80 -e PORT=80 --name aliveImage divideprojects/aliveimage
 ```
 
 ## Build and Run
@@ -19,7 +22,7 @@ docker build -t aliveimage .
 
 Run:
 ```bash
-docker run -d -p 80:80 --name aliveImage aliveimage
+docker run -d -p 80:80 -e PORT=80 --name aliveImage aliveimage
 ```
 
 ## Test
