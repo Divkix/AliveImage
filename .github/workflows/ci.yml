@@ -12,8 +12,8 @@ jobs:
     name: Build Image
     runs-on: ubuntu-latest
     permissions:
-      packages: write
       contents: read
+      packages: write
 
     steps:
       - name: Checkout current repo
