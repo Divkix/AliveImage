@@ -1,3 +1,3 @@
-FROM gcr.io/distroless/static
+FROM scratch
 COPY aliveimage /
 CMD ["/aliveimage"]
