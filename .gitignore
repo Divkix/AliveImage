@@ -22,3 +22,6 @@ go.work
 
 # tmp folder by air
 tmp/
+
+# dist folder
+dist/
