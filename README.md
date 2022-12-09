@@ -17,12 +17,12 @@ docker run -d -p 80:80 -e PORT=80 --name aliveImage divideprojects/aliveimage
 
 Build:
 ```bash
-docker build -t aliveimage .
+docker build -t aliveimage-local .
 ```
 
 Run:
 ```bash
-docker run -d -p 80:80 -e PORT=80 --name aliveImage aliveimage
+docker run -d -p 80:80 -e PORT=80 --name aliveImage aliveimage-local
 ```
 
 ## Test
