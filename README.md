@@ -1,8 +1,15 @@
 # Alive Image
 
+[![CI](https://github.com/divideprojects/AliveImage/actions/workflows/ci.yml/badge.svg)](https://github.com/divideprojects/AliveImage/actions/workflows/ci.yml)
+[![Docker Image Version (latest semver)](https://img.shields.io/docker/v/divideprojects/aliveimage?sort=semver)](https://hub.docker.com/r/divideprojects/aliveimage)
+[![Docker Image Size (tag)](https://img.shields.io/docker/image-size/divideprojects/aliveimage/latest)](https://hub.docker.com/r/divideprojects/aliveimage)
+[![Docker Pulls](https://img.shields.io/docker/pulls/divideprojects/aliveimage)](https://hub.docker.com/r/divideprojects/aliveimage)
+
 A simple docker image based on go and docker that serves a json response with the uptime of the container.
 
 Made using go and docker.
+
+Image available on [Docker Hub](https://hub.docker.com/r/divideprojects/aliveimage) and [Github Container Registry](https://github.com/divideprojects/AliveImage/pkgs/container/aliveimage).
 
 ## Environment Variables
  - PORT: The port to serve the response. Default: 80
