@@ -5,12 +5,9 @@ RUN addgroup -S aliveuser \
 RUN apk add -U --no-cache ca-certificates
 WORKDIR /app
 COPY . .
-RUN GOOS=`go env GOHOSTOS` GOARCH=`go env GOHOSTARCH` go build -o out/aliveimage
+RUN CGO_ENABLED=0 GOOS=`go env GOHOSTOS` GOARCH=`go env GOHOSTARCH` go build -o out/aliveimage
 
 # Run Stage: Run bot using the bot and doppler binary copied from build stage
-FROM scratch
-COPY --from=builder /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/ca-certificates.crt
+FROM alpine:3.17
 COPY --from=builder /app/out/aliveimage /
-COPY --from=builder /etc/passwd /etc/passwd
-USER aliveuser
 CMD ["/aliveimage"]
