@@ -2,6 +2,7 @@
 
 [![CI](https://github.com/divideprojects/AliveImage/actions/workflows/ci.yml/badge.svg)](https://github.com/divideprojects/AliveImage/actions/workflows/ci.yml)
 [![Docker Image Version (latest semver)](https://img.shields.io/docker/v/divideprojects/aliveimage?sort=semver)](https://hub.docker.com/r/divideprojects/aliveimage)
+![Repo Size](https://img.shields.io/github/repo-size/DivideProjects/aliveimage?style=flat-square)
 [![Docker Image Size (tag)](https://img.shields.io/docker/image-size/divideprojects/aliveimage/latest)](https://hub.docker.com/r/divideprojects/aliveimage)
 [![Docker Pulls](https://img.shields.io/docker/pulls/divideprojects/aliveimage)](https://hub.docker.com/r/divideprojects/aliveimage)
 
