@@ -10,7 +10,7 @@ A simple docker image based on go and docker that serves a json response with th
 
 Made using go and docker.
 
-Image available on [Docker Hub](https://hub.docker.com/r/divideprojects/aliveimage) and [Github Container Registry](https://github.com/divideprojects/AliveImage/pkgs/container/aliveimage).
+Image available on [Docker Hub](https://hub.docker.com/r/divkix/aliveimage) and [Github Container Registry](https://github.com/divkix/AliveImage/pkgs/container/aliveimage).
 
 ## Environment Variables
  - PORT: The port to serve the response. Default: 80
@@ -18,7 +18,7 @@ Image available on [Docker Hub](https://hub.docker.com/r/divideprojects/aliveima
 ## Usage
 
 ```bash
-docker run -d -p 80:80 -e PORT=80 --name aliveImage divideprojects/aliveimage
+docker run -d -p 80:80 -e PORT=80 --name aliveImage divkix/aliveimage
 ```
 
 ## Build and Run
