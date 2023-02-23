@@ -1,4 +1,4 @@
-module github.com/divideprojects/AliveImage
+module github.com/divkix/AliveImage
 
 go 1.19
 
