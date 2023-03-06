@@ -46,8 +46,9 @@ func indexHandler(w http.ResponseWriter, req bunrouter.Request) error {
 	// return a JSON response with the status and uptime, truncated to seconds
 	return bunrouter.JSON(w,
 		bunrouter.H{
-			"status": "alive",
-			"uptime": time.Since(start).Truncate(time.Second).String(),
+			"status":   "alive",
+			"uptime":   time.Since(start).Truncate(time.Second).String(),
+			"hostname": os.Getenv("HOSTNAME"),
 		},
 	)
 }
