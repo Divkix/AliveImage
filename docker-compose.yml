@@ -1,0 +1,11 @@
+version: '3'
+services:
+  alive-image:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    environment:
+      - PORT=8080
+    ports:
+      - '5005:8080'

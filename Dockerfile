@@ -7,4 +7,5 @@ RUN CGO_ENABLED=0 GOOS=`go env GOHOSTOS` GOARCH=`go env GOHOSTARCH` go build -o 
 # Final Stage: Use a smaller base image and only include necessary files
 FROM scratch
 COPY --from=builder /app/out/aliveimage /app/aliveimage
+EXPOSE 8080
 CMD ["/app/aliveimage"]
