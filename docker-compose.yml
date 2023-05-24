@@ -1,6 +1,7 @@
 version: '3'
 services:
   alive-image:
+    container_name: alive-image
     build:
       context: .
       dockerfile: Dockerfile
