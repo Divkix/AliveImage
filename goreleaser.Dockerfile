@@ -1,6 +1,7 @@
-FROM alpine:3.18
+FROM alpine
+RUN apk add --no-cache tini
 COPY aliveimage /
-CMD ["/aliveimage"]
+ENTRYPOINT ["/sbin/tini", "--", "/aliveimage"]
 
 HEALTHCHECK --interval=5s --timeout=3s --retries=3 CMD curl --fail http://localhost:$API_LISTEN_PORT/status || exit 1
 

@@ -7,11 +7,12 @@ RUN CGO_ENABLED=0 GOOS=`go env GOHOSTOS` GOARCH=`go env GOHOSTARCH` go build -o 
 RUN upx --brute out/aliveimage
 
 # Final Stage: Use a smaller base image and only include necessary files
-FROM alpine:3.18
+FROM alpine
+RUN apk add --no-cache tini
 COPY --from=builder /app/out/aliveimage /app/aliveimage
 ENV API_LISTEN_PORT=8080
 EXPOSE $API_LISTEN_PORT
-CMD ["/app/aliveimage"]
+ENTRYPOINT ["/sbin/tini", "--", "/app/aliveimage"]
 
 HEALTHCHECK --interval=5s --timeout=3s --retries=3 CMD curl --fail http://localhost:$API_LISTEN_PORT/status || exit 1
 
