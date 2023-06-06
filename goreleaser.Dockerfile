@@ -1,5 +1,5 @@
 FROM alpine
-RUN apk add --no-cache tini
+RUN apk add --no-cache tini curl
 COPY aliveimage /
 ENTRYPOINT ["/sbin/tini", "--", "/aliveimage"]
 
