@@ -2,6 +2,7 @@ FROM alpine
 RUN apk add --no-cache tini curl
 COPY aliveimage /
 ENTRYPOINT ["/sbin/tini", "--", "/aliveimage"]
+ENV API_LISTEN_PORT=8080
 
 HEALTHCHECK --interval=5s --timeout=3s --retries=3 CMD curl --fail http://localhost:$API_LISTEN_PORT/status || exit 1
 
