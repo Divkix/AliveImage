@@ -8,11 +8,10 @@ RUN upx --brute out/aliveimage
 
 # Final Stage: Use a smaller base image and only include necessary files
 FROM alpine
-RUN apk add --no-cache tini
 COPY --from=builder /app/out/aliveimage /app/aliveimage
 ENV API_LISTEN_PORT=8080
 EXPOSE $API_LISTEN_PORT
-ENTRYPOINT ["/sbin/tini", "--", "/app/aliveimage"]
+ENTRYPOINT ["/app/aliveimage"]
 
 HEALTHCHECK --interval=5s --timeout=3s --retries=3 CMD curl --fail http://localhost:$API_LISTEN_PORT/status || exit 1
 
