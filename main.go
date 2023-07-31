@@ -43,6 +43,9 @@ func indexHandler(w http.ResponseWriter, req bunrouter.Request) error {
 	// Set the content type to JSON
 	w.Header().Set("Content-Type", "application/json")
 
+	// log the request
+	log.Printf("Received request from %s for %s\n", req.RemoteAddr, req.URL.Path)
+
 	// Return a JSON response with the status and uptime, truncated to seconds
 	return bunrouter.JSON(w,
 		bunrouter.H{
